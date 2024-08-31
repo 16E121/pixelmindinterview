@@ -1,0 +1,565 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Sample API",
+    "description": "interview",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000",
+      "description": ""
+    }
+  ],
+  "paths": {
+    "/api/staff": {
+      "get": {
+        "tags": [
+          "Staff"
+        ],
+        "description": "Endpoint to list all staff",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Staff"
+        ],
+        "description": "Image upload error using this swagger instead this use Postman",
+        "parameters": [
+          {
+            "name": "image",
+            "in": "formData",
+            "description": "image",
+            "schema": {
+              "type": "file"
+            }
+          },
+          {
+            "name": "data",
+            "in": "formData",
+            "schema": {
+              "type": "String"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "data": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/staff/{id}": {
+      "get": {
+        "tags": [
+          "Staff"
+        ],
+        "description": "Retrieve staff details by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Staff"
+        ],
+        "description": "Image upload error using this swagger instead this use Postman",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "image",
+            "in": "formData",
+            "required": true,
+            "description": "image",
+            "schema": {
+              "type": "file"
+            }
+          },
+          {
+            "name": "data",
+            "in": "formData",
+            "schema": {
+              "type": "String"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Staff"
+        ],
+        "description": "Delete staff details by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/updateall": {
+      "put": {
+        "tags": [
+          "Staff"
+        ],
+        "description": "Update multiple staff records by email",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "example": "any"
+                  },
+                  "updateData": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/create": {
+      "post": {
+        "tags": [
+          "Schedule"
+        ],
+        "description": "Endpoint to create a new schedule.",
+        "parameters": [
+          {
+            "name": "data",
+            "in": "formData",
+            "schema": {
+              "type": "String"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "serviceCategory": {
+                    "example": "any"
+                  },
+                  "serviceName": {
+                    "example": "any"
+                  },
+                  "dateRange": {
+                    "example": "any"
+                  },
+                  "customDetails": {
+                    "example": "any"
+                  },
+                  "fromDate": {
+                    "example": "any"
+                  },
+                  "toDate": {
+                    "example": "any"
+                  },
+                  "sameAsEveryday": {
+                    "example": "any"
+                  },
+                  "timeSlots": {
+                    "example": "any"
+                  },
+                  "monday": {
+                    "example": "any"
+                  },
+                  "tuesday": {
+                    "example": "any"
+                  },
+                  "wednesday": {
+                    "example": "any"
+                  },
+                  "thursday": {
+                    "example": "any"
+                  },
+                  "friday": {
+                    "example": "any"
+                  },
+                  "saturday": {
+                    "example": "any"
+                  },
+                  "sunday": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getalldetails": {
+      "get": {
+        "tags": [
+          "Schedule"
+        ],
+        "description": "Endpoint to list all schedules.",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/getdetails/{id}": {
+      "get": {
+        "tags": [
+          "Schedule"
+        ],
+        "description": "Endpoint to get a schedule by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/schedule/{id}": {
+      "put": {
+        "tags": [
+          "Schedule"
+        ],
+        "description": "Endpoint to update an existing schedule.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "data",
+            "in": "formData",
+            "schema": {
+              "type": "String"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "timeSlots": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Schedule"
+        ],
+        "description": "Endpoint to delete a schedule by ID.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "404": {
+            "description": "Not Found"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/branch": {
+      "post": {
+        "tags": [
+          "Branch"
+        ],
+        "description": "Endpoint Create ScheduleList",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/getallbranch": {
+      "get": {
+        "tags": [
+          "Branch"
+        ],
+        "description": "Endpoint AllSchedule",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/getbranch/{id}": {
+      "get": {
+        "tags": [
+          "Branch"
+        ],
+        "description": "Endpoint branch using ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/updatebranch/{id}": {
+      "put": {
+        "tags": [
+          "Branch"
+        ],
+        "description": "Endpoint brach update list",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "any"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/deletebranch/{id}": {
+      "delete": {
+        "tags": [
+          "Branch"
+        ],
+        "description": "Endpoint schedule delete using ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "name": "x-auth-token",
+        "scheme": "bearer",
+        "in": "header"
+      }
+    }
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ]
+}
